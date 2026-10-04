@@ -2,35 +2,33 @@
 
 Componente de servidor de PetCare, la plataforma web que conecta propietarios de mascotas y proveedores de servicios de cuidado. Su propósito es gestionar usuarios y roles, publicaciones, disponibilidad y solicitudes de reserva con información consistente para ambas partes.
 
-**Rama:** `backend` · **Estado:** documentación inicial de análisis y diseño · **Actualización:** 4 de octubre de 2026.
-
-> Este README define el trabajo previsto. La rama contiene documentación; no hay servidor, API, base de datos ni pruebas implementadas todavía. Los modelos, rutas y estructuras propuestos requieren acuerdo del equipo antes de programarse.
+**Componente:** Backend · **Rama:** `backend`
 
 [README del frontend](https://github.com/Dumo04/PetCare/blob/frontend/README.md) · [Repositorio](https://github.com/Dumo04/PetCare) · [Tablero de Jira](https://santiagosworkspace-32817046.atlassian.net/jira/software/projects/PET/boards/1)
 
-## Contexto académico y fuente
+## Contexto académico
 
 Proyecto de la línea B, **PetCare**, para Análisis y Diseño de Sistemas, Programa de Ingeniería de Software, Facultad de Ingeniería, Corporación Universitaria Iberoamericana. Docente: Tatiana Cabrera.
 
-La fuente es **“Actividad 1 - Identificar el proyecto tecnológico a trabajar”**, documento del equipo de septiembre de 2026, en la versión PDF suministrada el 4 de octubre de 2026. Se toman el alcance y las tecnologías del numeral 6.2 (p. 28), la planificación del 6.3 (p. 29) y los requisitos e historias de los numerales 7.1 a 7.3 (pp. 30-33).
+El componente se organiza a partir del alcance del MVP y la especificación de requisitos del proyecto.
 
-La numeración HU y RF de este README corresponde al PDF actual. Puede diferir del borrador inicial de Jira y debe conciliarse antes de asociar cambios a tarjetas. Las decisiones técnicas añadidas se identifican como propuestas; no se presentan como decisiones ya aprobadas en el documento.
+Los identificadores HU, RF y RNF permiten relacionar las historias de usuario con los requisitos funcionales y no funcionales. Las secciones de arquitectura describen la organización de responsabilidades y los puntos de integración del componente.
 
 ## Objetivo y tecnologías
 
 Centralizar las reglas que permiten encontrar servicios y solicitar una cita, evitando que la disponibilidad o el estado de una reserva dependan solamente de lo que muestre el navegador.
 
-| Tecnología definida en el PDF | Responsabilidad prevista |
+| Tecnología | Responsabilidad definida |
 | --- | --- |
 | Node.js | Entorno de ejecución del servidor. |
 | Express | Organización de las rutas y solicitudes HTTP. |
 | MySQL | Persistencia relacional de usuarios, servicios, horarios y reservas. |
 
-El cliente previsto utiliza HTML, CSS y JavaScript. Las versiones, bibliotecas de acceso a datos y mecanismo de autenticación están pendientes de definición.
+El cliente definido utiliza HTML, CSS y JavaScript. Las versiones y dependencias se registran en la configuración del componente; el mecanismo de autenticación debe mantener un contrato común con el cliente.
 
 ## Módulos y trazabilidad
 
-| Módulo | Historias y requisitos del PDF | Responsabilidad del backend |
+| Módulo | Historias y requisitos | Responsabilidad del backend |
 | --- | --- | --- |
 | Autenticación y roles | HU-01; RF-01 | Registro, unicidad de correo, autenticación y autorización de propietarios y proveedores. |
 | Publicación de servicios | HU-02; RF-02 | Validar y guardar descripción, precio, horario y especies atendidas del proveedor autenticado. |
@@ -50,25 +48,25 @@ HU-01 a HU-07 tienen prioridad **Debe**; HU-08 tiene prioridad **Debería**. RF-
 4. Una solicitud incluye el servicio, el nombre y la especie de la mascota, la fecha y la hora. Se valida la disponibilidad antes de guardarla.
 5. Una solicitud nueva queda en estado `pendiente` y aparece en la agenda del proveedor.
 6. El proveedor correspondiente puede confirmar o rechazar la solicitud. El rechazo exige un motivo.
-7. Confirmar bloquea el horario para otras solicitudes; rechazar permite que vuelva a estar disponible, según los criterios del documento.
+7. Confirmar bloquea el horario para otras solicitudes; rechazar permite que vuelva a estar disponible, conforme a las reglas de disponibilidad.
 8. Las partes autorizadas consultan el mismo estado persistido. El propietario no confirma su propia solicitud ni responde en nombre del proveedor.
 
-### Estados y decisión pendiente sobre disponibilidad
+### Estados y consistencia de disponibilidad
 
 ```text
 pendiente -> confirmada
 pendiente -> rechazada (con motivo)
 ```
 
-El PDF no incorpora cancelación, reprogramación ni estados adicionales en los criterios del MVP.
+El MVP contempla las transiciones de confirmación y rechazo. La cancelación y la reprogramación quedan fuera del alcance.
 
-**Punto por acordar:** el PDF pide verificar disponibilidad al solicitar y bloquear al confirmar, pero no precisa si una solicitud pendiente retiene temporalmente el cupo. Antes de implementar se debe definir esa política, la capacidad por franja, la duración de cada servicio y la zona horaria. Cualquiera que sea el acuerdo, el servidor deberá impedir confirmaciones incompatibles y comprobar la disponibilidad dentro de una operación atómica. Rechazar una solicitud nunca debe liberar una franja ocupada por otra reserva confirmada.
+La política de disponibilidad debe especificar el tratamiento de solicitudes pendientes, la capacidad por franja, la duración de cada servicio y la zona horaria. El servidor valida la disponibilidad al solicitar, impide confirmaciones incompatibles y comprueba los cambios dentro de una operación atómica. Rechazar una solicitud nunca debe liberar una franja ocupada por otra reserva confirmada.
 
-## Modelo de datos propuesto
+## Modelo conceptual de datos
 
-Este modelo orienta el diseño relacional; no es un esquema SQL ya creado.
+El modelo conceptual organiza las entidades y relaciones necesarias para el MVP.
 
-| Entidad | Información principal | Relación prevista |
+| Entidad | Información principal | Relación definida |
 | --- | --- | --- |
 | Usuario | Identificador, nombre, correo único, resumen de contraseña y rol. | Un usuario puede ser propietario o proveedor. |
 | Proveedor | Usuario asociado y descripción pública. | Un proveedor publica varios servicios. |
@@ -80,18 +78,18 @@ Este modelo orienta el diseño relacional; no es un esquema SQL ya creado.
 
 Los datos básicos de mascota se registran para la solicitud. El MVP no incluye un perfil clínico ni historial de vacunación. La ficha y el filtro del proveedor se derivan de las especies y servicios que tenga publicados.
 
-## Contrato HTTP propuesto
+## Contrato HTTP de referencia
 
-**No implementado.** Base propuesta: `/api`. Los nombres y formatos definitivos deben coordinarse con frontend.
+Base de referencia: `/api`. Las siguientes rutas describen el contrato de integración. Cualquier cambio en rutas o formatos debe actualizarse de forma coordinada con el frontend.
 
-| Método y ruta propuesta | Acción | Acceso previsto |
+| Método y ruta | Acción | Acceso definido |
 | --- | --- | --- |
 | `POST /api/auth/register` | Registrar cuenta con rol. | Sin sesión. |
 | `POST /api/auth/login` | Autenticar usuario. | Sin sesión. |
 | `POST /api/auth/logout` | Finalizar sesión, según el mecanismo elegido. | Usuario autenticado. |
-| `GET /api/especies` | Listar especies para selección. | Según política de catálogo por acordar. |
+| `GET /api/especies` | Listar especies para selección. | Según la política de acceso al catálogo. |
 | `POST /api/servicios` | Publicar un servicio. | Proveedor autenticado. |
-| `GET /api/proveedores?especie=roedores` | Consultar catálogo filtrado. | Propietario; acceso público por acordar. |
+| `GET /api/proveedores?especie=roedores` | Consultar catálogo filtrado. | Según la política de acceso al catálogo. |
 | `GET /api/proveedores/:id` | Consultar ficha y servicios. | Mismo criterio del catálogo. |
 | `GET /api/servicios/:id/disponibilidad?fecha=AAAA-MM-DD` | Consultar horarios disponibles. | Propietario. |
 | `POST /api/reservas` | Solicitar reserva. | Propietario autenticado. |
@@ -101,27 +99,27 @@ Los datos básicos de mascota se registran para la solicitud. El MVP no incluye 
 
 El propietario y el proveedor de una operación se obtienen de la identidad autenticada y de las relaciones guardadas, no de un identificador enviado por el cliente sin verificar.
 
-Propuesta de respuestas: `201` para creación, `200` para consulta o actualización, `400` para datos inválidos, `401` para falta de autenticación, `403` para permisos insuficientes, `404` para recurso inexistente y `409` para correo duplicado o conflicto de disponibilidad. Un catálogo sin coincidencias devuelve una lista vacía para que frontend presente el mensaje de RF-10.
+Convención de respuestas: `201` para creación, `200` para consulta o actualización, `400` para datos inválidos, `401` para falta de autenticación, `403` para permisos insuficientes, `404` para recurso inexistente y `409` para correo duplicado o conflicto de disponibilidad. Un catálogo sin coincidencias devuelve una lista vacía para que frontend presente el mensaje de RF-10.
 
-Se propone un error uniforme con `codigo`, `mensaje` y, cuando aplique, `campos`, sin exponer contraseñas, consultas SQL ni detalles internos. Acordar el contrato antes de integrar; estos códigos y rutas no constituyen evidencia de una API funcionando.
+El contrato define un error uniforme con `codigo`, `mensaje` y, cuando aplique, `campos`, sin exponer contraseñas, consultas SQL ni detalles internos. El contrato se validará entre ambos componentes antes de la integración.
 
 ## Calidad, seguridad y privacidad
 
-| Requisito del PDF | Trabajo previsto |
+| Requisito | Trabajo definido |
 | --- | --- |
 | RNF-01: búsqueda inferior a 3 segundos | Medir consultas e integración con frontend; definir volumen de datos y condiciones de prueba. |
 | RNF-02: función de resumen con sal | Guardar contraseñas como hash con sal mediante una función apropiada para contraseñas; nunca en texto plano ni devolverlas al cliente. |
-| RNF-04: disponibilidad del 99 % | Definir alojamiento y periodo de medición, observar disponibilidad y registrar incidentes. Es una meta, no un nivel ya obtenido. |
+| RNF-04: disponibilidad del 99 % | Definir alojamiento y periodo de medición, observar disponibilidad y registrar incidentes.  |
 | RNF-05: tratamiento de datos personales | Incorporar las medidas requeridas por el proyecto para el tratamiento conforme a la Ley 1581 de 2012; validar política, finalidad y acceso antes de usar datos reales. |
 | RNF-08: documentación y versionado | Documentar API, modelo, configuración, migraciones y pruebas en el repositorio. |
 
 RNF-03, RNF-06 y RNF-07 se verifican principalmente en la interfaz, con apoyo del backend para completar el recorrido.
 
-Pautas técnicas propuestas: validar entradas en servidor, usar consultas parametrizadas, comprobar la propiedad de cada recurso, proteger sesiones y acordar orígenes permitidos para la interfaz. El mecanismo concreto de sesión y sus medidas de protección quedan pendientes de decisión conjunta.
+Pautas técnicas: validar entradas en servidor, usar consultas parametrizadas, comprobar la propiedad de cada recurso, proteger sesiones y acordar orígenes permitidos para la interfaz. El mecanismo de sesión y sus medidas de protección deben mantenerse coherentes con el contrato del frontend.
 
-Las credenciales de base de datos y los secretos se configurarán fuera del código. Un futuro `.env.example` contendrá solo nombres y valores ficticios; los archivos con secretos reales no se publicarán. Las pruebas y ejemplos públicos utilizarán información sintética y no respuestas individuales de encuestas.
+Las credenciales de base de datos y los secretos se configurarán fuera del código. El archivo `.env.example` debe contener solo nombres y valores ficticios; los archivos con secretos reales no se publicarán. Las pruebas y ejemplos públicos utilizarán información sintética y no respuestas individuales de encuestas.
 
-## Organización propuesta de archivos
+## Organización de referencia
 
 ```text
 README.md
@@ -142,9 +140,9 @@ database/
 tests/
 ```
 
-Salvo `README.md`, estos archivos y carpetas todavía no están creados. Se propone separar las rutas, reglas de negocio y acceso a MySQL para mantener cada responsabilidad identificable.
+La estructura separa rutas, reglas de negocio y acceso a MySQL para mantener responsabilidades identificables.
 
-## Consulta y ejecución
+## Acceso al componente
 
 Para consultar esta rama localmente:
 
@@ -153,48 +151,51 @@ git clone --branch backend --single-branch https://github.com/Dumo04/PetCare.git
 cd PetCare
 ```
 
-**No hay comandos de instalación, migración o arranque disponibles todavía.** Primero deben incorporarse el código, `package.json`, el esquema de datos y la configuración de ejemplo. Luego se documentarán las versiones de Node.js y MySQL, las dependencias, las variables requeridas, el puerto, la creación de la base y los comandos reales verificados. No se necesita un servidor para leer esta documentación.
+## Criterios de aceptación
 
-## Pruebas previstas
+- Registro válido, correo duplicado, credenciales incorrectas y permisos por rol (HU-01).
+- Publicación completa y rechazo cuando falte precio o especie (HU-02).
+- Filtro por especie con coincidencias y lista vacía (HU-03).
+- Ficha con servicios y proveedor sin servicios publicados (HU-04).
+- Reserva válida en estado pendiente y rechazo de un horario ocupado (HU-05).
+- Agenda propia ordenada y agenda sin solicitudes (HU-06).
+- Confirmación por el proveedor correcto, rechazo con motivo y acceso denegado a terceros (HU-07).
+- Consulta de estados propios y motivo de rechazo (HU-08).
+- Solicitudes o confirmaciones simultáneas sin sobrepasar la capacidad acordada.
+- Búsqueda inferior a tres segundos y validación del recorrido junto con frontend.
 
-- [ ] Registro válido, correo duplicado, credenciales incorrectas y permisos por rol (HU-01).
-- [ ] Publicación completa y rechazo cuando falte precio o especie (HU-02).
-- [ ] Filtro por especie con coincidencias y lista vacía (HU-03).
-- [ ] Ficha con servicios y proveedor sin servicios publicados (HU-04).
-- [ ] Reserva válida en estado pendiente y rechazo de un horario ocupado (HU-05).
-- [ ] Agenda propia ordenada y agenda sin solicitudes (HU-06).
-- [ ] Confirmación por el proveedor correcto, rechazo con motivo y acceso denegado a terceros (HU-07).
-- [ ] Consulta de estados propios y motivo de rechazo (HU-08).
-- [ ] Solicitudes o confirmaciones simultáneas sin sobrepasar la capacidad acordada.
-- [ ] Búsqueda inferior a tres segundos y validación del recorrido junto con frontend.
+La validación incluye pruebas por módulo y pruebas de integración del recorrido completo.
 
-Ninguna casilla está marcada porque no existen resultados de ejecución en esta entrega documental.
+## Equipo y metodología
 
-## Equipo y planificación
-
-| Integrante | Rol y responsabilidad según el PDF |
+| Integrante | Rol |
 | --- | --- |
-| Ariana Calderón Fuentes | Product Owner y desarrollo; HU-01, registro e ingreso (8 puntos). |
-| Heidy Viviana Cárdenas Soler | Desarrollo; HU-02, publicación de servicios (5 puntos). |
-| Laura Valentina Ñustes Contento | Desarrollo; HU-03, catálogo por especie (5 puntos). |
-| Santiago Duque Mora | Scrum Master y desarrollo; Jira, repositorio y entorno; acompañamiento de las historias. |
+| Ariana Calderón Fuentes | Product Owner y equipo de desarrollo. |
+| Santiago Duque Mora | Scrum Master y equipo de desarrollo. |
+| Laura Valentina Ñustes Contento | Equipo de desarrollo. |
+| Heidy Viviana Cárdenas Soler | Equipo de desarrollo. |
 
-El Sprint 1 está planificado del **5 al 18 de octubre de 2026** con 18 puntos. El documento indica 64 horas disponibles entre los cuatro integrantes durante esas dos semanas; esa disponibilidad no establece una conversión fija entre puntos y horas. Las responsabilidades de las historias abarcan ambas capas y no fijan una división exclusiva del equipo entre frontend y backend.
+El equipo utiliza Scrum y gestiona el backlog, las prioridades y el seguimiento de las historias en Jira. Las historias comprenden el trabajo de interfaz y servidor necesario para completar cada funcionalidad. La planificación de iteraciones y las asignaciones se mantienen en el tablero del proyecto.
 
 ## Ramas y colaboración
 
 - `main`: presentación del proyecto y enlaces.
-- `frontend`: documentación y futuro código del cliente.
-- `backend`: este README y futuro código del servidor.
+- `frontend`: documentación y código del cliente.
+- `backend`: documentación y código del servidor.
 
-Cada rama de componente tiene su propio `README.md` en la raíz. Mantenerlos separados para la entrega; acordar una estructura de integración antes de fusionar ramas para evitar sobrescribir uno con el otro. Asociar los cambios a las historias del PDF y a sus tarjetas equivalentes en Jira.
+Cada componente mantiene su documentación en el archivo `README.md` de su rama. Los cambios se relacionan con las historias de usuario y las tareas de Jira. La integración deberá conservar la documentación específica de ambas capas.
 
 ## Alcance excluido y recursos
 
-Fuera del MVP: perfil de mascota con historial de vacunación, filtros por ciudad y precio, notificaciones automáticas, historial de reservas y reportes, pagos, geolocalización, reseñas, mensajería y aplicación móvil nativa. No se proponen endpoints para esas funciones en esta entrega.
+Fuera del MVP: perfil de mascota con historial de vacunación, filtros por ciudad y precio, notificaciones automáticas, historial de reservas y reportes, pagos, geolocalización, reseñas, mensajería y aplicación móvil nativa.
 
 - [Jira del proyecto](https://santiagosworkspace-32817046.atlassian.net/jira/software/projects/PET/boards/1).
-- [Diseños de PetCare en Figma, referenciados por el PDF](https://www.figma.com/design/EUB7PbmZvgfWeAtE1QbvYk/PetCare).
-- Documento académico del equipo citado en la sección de fuente; las respuestas individuales de investigación no forman parte del repositorio público.
+- [Diseños de PetCare en Figma](https://www.figma.com/design/EUB7PbmZvgfWeAtE1QbvYk/PetCare).
 
-Pendientes antes de implementar: versiones, sesiones, contrato definitivo de API, política de cupos pendientes, duración y zona horaria, esquema SQL, alojamiento y licencia.
+## Mantenimiento de la documentación
+
+Actualizar este README cuando cambien el alcance, la arquitectura, el contrato de integración o los procedimientos de configuración. Mantener la planificación temporal y el estado de las tareas en Jira, y registrar los cambios técnicos junto con el código correspondiente.
+
+## Referencia del proyecto
+
+Calderón Fuentes, A., Cárdenas Soler, H. V., Duque Mora, S. y Ñustes Contento, L. V. (2026). *Actividad 1 - Identificar el proyecto tecnológico a trabajar*. Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Documento académico del equipo.
