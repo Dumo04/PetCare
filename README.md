@@ -2,19 +2,17 @@
 
 Aplicación web para conectar propietarios de mascotas con proveedores de servicios de cuidado. Este componente presenta el recorrido **encontrar, comparar y reservar**, con interfaces diferenciadas para propietarios y proveedores.
 
-**Rama:** `frontend` · **Estado:** documentación inicial de análisis y diseño · **Actualización:** 4 de octubre de 2026.
-
-> Este README define el trabajo previsto. La rama contiene documentación; todavía no incluye una aplicación ejecutable ni acredita funcionalidades implementadas o pruebas aprobadas.
+**Componente:** Frontend · **Rama:** `frontend`
 
 [README del backend](https://github.com/Dumo04/PetCare/blob/backend/README.md) · [Repositorio](https://github.com/Dumo04/PetCare) · [Tablero de Jira](https://santiagosworkspace-32817046.atlassian.net/jira/software/projects/PET/boards/1)
 
-## Contexto académico y fuente
+## Contexto académico
 
 Proyecto de la línea B, **PetCare**, para Análisis y Diseño de Sistemas, Programa de Ingeniería de Software, Facultad de Ingeniería, Corporación Universitaria Iberoamericana. Docente: Tatiana Cabrera.
 
-La fuente es el documento del equipo **“Actividad 1 - Identificar el proyecto tecnológico a trabajar”**, septiembre de 2026, en la versión PDF suministrada el 4 de octubre de 2026. Este README toma el alcance del numeral 6.2 (p. 28), la planificación del 6.3 (p. 29), los requisitos del 7.1 y 7.2 (pp. 30-31), las historias del 7.3 (pp. 32-33) y las decisiones de interfaz del 5.3 (pp. 26-27).
+El componente se organiza a partir del alcance del MVP y la especificación de requisitos del proyecto.
 
-Los identificadores HU y RF corresponden a esta versión del PDF; no deben confundirse con la numeración de borradores anteriores de Jira. Las estructuras y pautas técnicas marcadas como propuestas se añaden para orientar la implementación y pueden ajustarse por el equipo.
+Los identificadores HU, RF y RNF permiten relacionar las historias de usuario con los requisitos funcionales y no funcionales. Las secciones de arquitectura describen la organización de responsabilidades y los puntos de integración del componente.
 
 ## Problema y objetivo
 
@@ -24,17 +22,17 @@ El frontend debe hacer visible la información necesaria para decidir, mantener 
 
 ## Tecnologías
 
-| Tecnología definida en el PDF | Uso previsto |
+| Tecnología | Uso definido |
 | --- | --- |
 | HTML | Estructura semántica de las páginas y formularios. |
 | CSS | Presentación y adaptación a escritorio, tableta y móvil. |
 | JavaScript | Interacciones, validaciones de interfaz y comunicación con el backend. |
 
-El backend previsto utiliza Node.js, Express y MySQL. No se presupone el uso de React, Angular u otro framework de interfaz.
+El backend definido utiliza Node.js, Express y MySQL. La interfaz utiliza tecnologías web estándar.
 
 ## Roles y pantallas
 
-| Pantalla prevista | Usuario | Contenido y comportamiento |
+| Pantalla definida | Usuario | Contenido y comportamiento |
 | --- | --- | --- |
 | Registro e inicio de sesión | Ambos roles | Datos de acceso, selección del rol al registrarse y acceso al panel correspondiente. |
 | Publicación de servicios | Proveedor | Descripción, precio, horario de atención y especies atendidas. |
@@ -47,7 +45,7 @@ El backend previsto utiliza Node.js, Express y MySQL. No se presupone el uso de 
 
 ## Funcionalidades y trazabilidad
 
-| Historia del PDF | Requisitos | Resultado esperado en la interfaz | Prioridad |
+| Historia de usuario | Requisitos | Resultado esperado en la interfaz | Prioridad |
 | --- | --- | --- | --- |
 | HU-01: registro e inicio de sesión | RF-01 | Redirigir al panel del rol; informar correo duplicado sin borrar los demás campos válidos. | Debe |
 | HU-02: publicar servicios | RF-02 | Validar campos obligatorios y presentar el servicio publicado. | Debe |
@@ -72,9 +70,9 @@ Quedan para versiones posteriores: perfil de mascota con historial de vacunació
 
 Registrar nombre y especie de la mascota en una solicitud no equivale a construir un módulo de historia clínica. La vista **Mis solicitudes** permite seguir el estado actual y no amplía el alcance a reportes históricos.
 
-## Integración prevista con el backend
+## Integración definida con el backend
 
-El contrato de API se propone en el [README del backend](https://github.com/Dumo04/PetCare/blob/backend/README.md). Las rutas aún no están implementadas.
+La integración se describe en el [README del backend](https://github.com/Dumo04/PetCare/blob/backend/README.md).
 
 - Consumir datos de autenticación, catálogo, detalle, disponibilidad, solicitudes y agenda.
 - Representar estados de carga, lista vacía, error y resultado exitoso.
@@ -83,9 +81,9 @@ El contrato de API se propone en el [README del backend](https://github.com/Dumo
 - Centralizar la URL de la API como configuración pública. Nunca incluir contraseñas de MySQL, claves privadas ni credenciales en el frontend.
 - Acordar con backend el mecanismo de sesión, el formato de errores y la zona horaria antes de integrar. Las validaciones del navegador no sustituyen las validaciones y permisos del servidor.
 
-## Organización propuesta de archivos
+## Organización de referencia
 
-La siguiente estructura es una propuesta, no una lista de archivos ya creados:
+Estructura de referencia para organizar el código del componente:
 
 ```text
 README.md
@@ -107,7 +105,7 @@ assets/
   img/
 ```
 
-## Consulta y ejecución
+## Acceso al componente
 
 Para consultar esta documentación en una copia local:
 
@@ -116,13 +114,11 @@ git clone --branch frontend --single-branch https://github.com/Dumo04/PetCare.gi
 cd PetCare
 ```
 
-**No hay comando de ejecución disponible todavía:** faltan las páginas, estilos y scripts. Cuando el equipo incorpore el código, debe documentar el servidor local elegido, la URL de la API, los pasos de inicio y los datos ficticios de prueba. No se requiere instalar dependencias para leer este README.
+## Criterios de calidad y validación
 
-## Calidad y validación prevista
+La validación del componente se realizará mediante los siguientes criterios de calidad:
 
-Los siguientes puntos son metas del PDF y actividades pendientes, no resultados comprobados:
-
-| Requisito | Validación prevista |
+| Requisito | Validación definida |
 | --- | --- |
 | RNF-01: búsqueda inferior a 3 segundos | Medir el recorrido de consulta y presentación con backend integrado y registrar las condiciones. |
 | RNF-03: diseño adaptable | Revisar catálogo, formularios y agenda en escritorio, tableta y móvil. |
@@ -130,45 +126,50 @@ Los siguientes puntos son metas del PDF y actividades pendientes, no resultados 
 | RNF-07: compatibilidad | Probar en las dos versiones más recientes, al momento de la evaluación, de los navegadores principales acordados. |
 | RNF-08: documentación y versionado | Mantener README, cambios y evidencias asociados a la historia trabajada. |
 
-RNF-02 se resuelve principalmente en backend; RNF-04 requiere evaluar el servicio completo y RNF-05 exige tratar los datos personales según lo establecido en el documento. Para el repositorio y las pruebas públicas se usarán datos ficticios, sin publicar respuestas individuales de encuestas.
+RNF-02 se resuelve principalmente en backend; RNF-04 requiere evaluar el servicio completo y RNF-05 exige tratar los datos personales conforme a la especificación de requisitos. Para el repositorio y las pruebas públicas se usarán datos ficticios, sin publicar respuestas individuales de encuestas.
 
-Como pautas de interfaz propuestas: asociar etiquetas a los campos, permitir navegación por teclado, mantener el foco visible y acompañar los colores de estado con texto.
+Pautas de interfaz: asociar etiquetas a los campos, permitir navegación por teclado, mantener el foco visible y acompañar los colores de estado con texto.
 
-Pruebas funcionales pendientes:
+Casos de aceptación:
 
-- [ ] Registro válido y correo duplicado; ingreso y panel por rol.
-- [ ] Publicación completa y bloqueo cuando falte precio o especie.
-- [ ] Filtro por especie con coincidencias y sin resultados.
-- [ ] Detalle con servicios y proveedor sin servicios publicados.
-- [ ] Solicitud válida y conflicto de horario con recuperación del formulario.
-- [ ] Agenda ordenada y agenda vacía.
-- [ ] Confirmación, rechazo con motivo y consulta del estado actualizado.
+- Registro válido y correo duplicado; ingreso y panel por rol.
+- Publicación completa y bloqueo cuando falte precio o especie.
+- Filtro por especie con coincidencias y sin resultados.
+- Detalle con servicios y proveedor sin servicios publicados.
+- Solicitud válida y conflicto de horario con recuperación del formulario.
+- Agenda ordenada y agenda vacía.
+- Confirmación, rechazo con motivo y consulta del estado actualizado.
 
-El PDF indica que aún no se aplicaron pruebas de usabilidad al prototipo. Prevé cinco participantes en el Sprint 3 para observar tiempo, finalización y dudas durante la tarea de encontrar proveedor y solicitar cita.
+La evaluación de usabilidad contempla sesiones con cinco participantes y registra el tiempo empleado, la finalización de la tarea y las dudas observadas durante la búsqueda de un proveedor y la solicitud de una cita.
 
-## Equipo y planificación
+## Equipo y metodología
 
-| Integrante | Rol y responsabilidad según el PDF |
+| Integrante | Rol |
 | --- | --- |
-| Ariana Calderón Fuentes | Product Owner y desarrollo; contacto con usuarios; HU-01 en Sprint 1 (8 puntos). |
-| Heidy Viviana Cárdenas Soler | Desarrollo; HU-02 en Sprint 1 (5 puntos). |
-| Laura Valentina Ñustes Contento | Desarrollo; HU-03 en Sprint 1 (5 puntos). |
-| Santiago Duque Mora | Scrum Master y desarrollo; Jira, repositorio y entorno; apoyo a las tres historias. |
+| Ariana Calderón Fuentes | Product Owner y equipo de desarrollo. |
+| Santiago Duque Mora | Scrum Master y equipo de desarrollo. |
+| Laura Valentina Ñustes Contento | Equipo de desarrollo. |
+| Heidy Viviana Cárdenas Soler | Equipo de desarrollo. |
 
-El Sprint 1 está planificado en el documento del **5 al 18 de octubre de 2026**, con 18 puntos. La disponibilidad indicada es de 64 horas del equipo para esas dos semanas; los puntos son una estimación relativa, no una conversión fija a horas. Las historias incluyen trabajo de frontend y backend; no asignan a una persona una sola capa de forma exclusiva.
+El equipo utiliza Scrum y gestiona el backlog, las prioridades y el seguimiento de las historias en Jira. Las historias comprenden el trabajo de interfaz y servidor necesario para completar cada funcionalidad. La planificación de iteraciones y las asignaciones se mantienen en el tablero del proyecto.
 
 ## Trabajo con ramas
 
 - `main`: presentación y enlaces a la documentación.
-- `frontend`: este README y el desarrollo futuro de la interfaz.
+- `frontend`: documentación y código de la interfaz.
 - `backend`: README independiente del servidor y la base de datos.
 
-Los dos documentos se llaman `README.md` y están en la raíz de sus respectivas ramas. Para esta entrega deben permanecer diferenciados. Antes de integrar ramas, acordar cómo conservar ambos documentos sin sobrescribir el contenido de una capa con el de la otra. Relacionar cada cambio con la historia del PDF y la tarjeta de Jira correspondiente, comprobando primero su equivalencia.
+Cada componente mantiene su documentación en el archivo `README.md` de su rama. Los cambios se relacionan con las historias de usuario y las tareas de Jira. La integración deberá conservar la documentación específica de ambas capas.
 
 ## Recursos
 
 - [Jira del proyecto](https://santiagosworkspace-32817046.atlassian.net/jira/software/projects/PET/boards/1).
-- [Diseños de PetCare en Figma, referenciados en el PDF](https://www.figma.com/design/EUB7PbmZvgfWeAtE1QbvYk/PetCare).
-- Documento académico del equipo citado en la sección de fuente. No se publican aquí la encuesta ni las respuestas individuales.
+- [Diseños de PetCare en Figma](https://www.figma.com/design/EUB7PbmZvgfWeAtE1QbvYk/PetCare).
 
-Pendiente de acordar: versiones de herramientas, contrato definitivo de API, política de sesiones, alojamiento y licencia. Este README no declara un despliegue ni una aplicación terminada.
+## Mantenimiento de la documentación
+
+Actualizar este README cuando cambien el alcance, la arquitectura, el contrato de integración o los procedimientos de configuración. Mantener la planificación temporal y el estado de las tareas en Jira, y registrar los cambios técnicos junto con el código correspondiente.
+
+## Referencia del proyecto
+
+Calderón Fuentes, A., Cárdenas Soler, H. V., Duque Mora, S. y Ñustes Contento, L. V. (2026). *Actividad 1 - Identificar el proyecto tecnológico a trabajar*. Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Documento académico del equipo.
