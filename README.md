@@ -1,6 +1,6 @@
 # PetCare
 
-Proyecto académico de Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Plataforma web para encontrar servicios de cuidado de mascotas, comparar la información del proveedor y solicitar reservas.
+Plataforma web para encontrar servicios de cuidado de mascotas, comparar la información del proveedor y solicitar reservas.
 
 ## Documentación por componente
 
@@ -20,14 +20,8 @@ La documentación comprende objetivos, alcance del MVP, requisitos funcionales y
 - Laura Valentina Ñustes Contento: equipo de desarrollo.
 - Heidy Viviana Cárdenas Soler: equipo de desarrollo.
 
-Docente: Tatiana Cabrera. Programa de Ingeniería de Software, Facultad de Ingeniería.
-
 ## Seguimiento
 
 [Tablero PetCare en Jira](https://santiagosworkspace-32817046.atlassian.net/jira/software/projects/PET/boards/1).
 
 La rama `main` presenta el proyecto. Las ramas `frontend` y `backend` contienen la documentación específica de cada componente.
-
-## Referencia del proyecto
-
-Calderón Fuentes, A., Cárdenas Soler, H. V., Duque Mora, S. y Ñustes Contento, L. V. (2026). *Actividad 1 - Identificar el proyecto tecnológico a trabajar*. Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Documento académico del equipo.
