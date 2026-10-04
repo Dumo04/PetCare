@@ -1,6 +1,6 @@
 # PetCare
 
-Proyecto académico de Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Plataforma web propuesta para encontrar servicios de cuidado de mascotas, comparar la información del proveedor y solicitar reservas.
+Proyecto académico de Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Plataforma web para encontrar servicios de cuidado de mascotas, comparar la información del proveedor y solicitar reservas.
 
 ## Documentación por componente
 
@@ -11,9 +11,7 @@ Cada componente tiene un README distinto en una rama independiente:
 | Frontend: HTML, CSS y JavaScript | `frontend` | [Leer README del frontend](https://github.com/Dumo04/PetCare/blob/frontend/README.md) |
 | Backend: Node.js, Express y MySQL | `backend` | [Leer README del backend](https://github.com/Dumo04/PetCare/blob/backend/README.md) |
 
-**Estado al 4 de octubre de 2026:** documentación inicial basada en el PDF del equipo “Actividad 1 - Identificar el proyecto tecnológico a trabajar”, septiembre de 2026. Todavía no se publica una aplicación ejecutable ni se acreditan pruebas aprobadas.
-
-Los README detallan objetivos, alcance del MVP, requisitos e historias, responsabilidades de cada componente, tecnologías, criterios de validación, planificación y propuestas de organización técnica. Las propuestas adicionales están identificadas como tales.
+La documentación comprende objetivos, alcance del MVP, requisitos funcionales y no funcionales, historias de usuario, tecnologías, responsabilidades de cada componente y criterios de validación. El seguimiento temporal del proyecto se administra en Jira.
 
 ## Equipo
 
@@ -28,4 +26,8 @@ Docente: Tatiana Cabrera. Programa de Ingeniería de Software, Facultad de Ingen
 
 [Tablero PetCare en Jira](https://santiagosworkspace-32817046.atlassian.net/jira/software/projects/PET/boards/1).
 
-Para la entrega, consultar las ramas `frontend` y `backend` mediante los enlaces anteriores. `main` funciona como índice. Mantener los documentos diferenciados y acordar la organización futura antes de fusionar las ramas.
+La rama `main` presenta el proyecto. Las ramas `frontend` y `backend` contienen la documentación específica de cada componente.
+
+## Referencia del proyecto
+
+Calderón Fuentes, A., Cárdenas Soler, H. V., Duque Mora, S. y Ñustes Contento, L. V. (2026). *Actividad 1 - Identificar el proyecto tecnológico a trabajar*. Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Documento académico del equipo.
