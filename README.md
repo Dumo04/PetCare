@@ -6,14 +6,6 @@ Componente de servidor de PetCare, la plataforma web que conecta propietarios de
 
 [README del frontend](https://github.com/Dumo04/PetCare/blob/frontend/README.md) · [Repositorio](https://github.com/Dumo04/PetCare) · [Tablero de Jira](https://santiagosworkspace-32817046.atlassian.net/jira/software/projects/PET/boards/1)
 
-## Contexto académico
-
-Proyecto de la línea B, **PetCare**, para Análisis y Diseño de Sistemas, Programa de Ingeniería de Software, Facultad de Ingeniería, Corporación Universitaria Iberoamericana. Docente: Tatiana Cabrera.
-
-El componente se organiza a partir del alcance del MVP y la especificación de requisitos del proyecto.
-
-Los identificadores HU, RF y RNF permiten relacionar las historias de usuario con los requisitos funcionales y no funcionales. Las secciones de arquitectura describen la organización de responsabilidades y los puntos de integración del componente.
-
 ## Objetivo y tecnologías
 
 Centralizar las reglas que permiten encontrar servicios y solicitar una cita, evitando que la disponibilidad o el estado de una reserva dependan solamente de lo que muestre el navegador.
@@ -195,7 +187,3 @@ Fuera del MVP: perfil de mascota con historial de vacunación, filtros por ciuda
 ## Mantenimiento de la documentación
 
 Actualizar este README cuando cambien el alcance, la arquitectura, el contrato de integración o los procedimientos de configuración. Mantener la planificación temporal y el estado de las tareas en Jira, y registrar los cambios técnicos junto con el código correspondiente.
-
-## Referencia del proyecto
-
-Calderón Fuentes, A., Cárdenas Soler, H. V., Duque Mora, S. y Ñustes Contento, L. V. (2026). *Actividad 1 - Identificar el proyecto tecnológico a trabajar*. Análisis y Diseño de Sistemas, Corporación Universitaria Iberoamericana. Documento académico del equipo.
