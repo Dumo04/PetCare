@@ -1,0 +1,35 @@
+PETCARE — ACTIVIDAD 2 — PRELIMINAR EDITABLE
+Revisión del 2 de noviembre de 2026
+
+ABRIR
+Extrae el ZIP completo y abre index.html en un navegador. Conserva juntos index.html, styles.css y app.js. No requiere instalaciones ni conexión. Para revisar el UI Kit, los ocho wireframes, los flujos y el Customer Journey abre diseno.html.
+
+RECORRIDO
+1. En el acceso selecciona Propietario y pulsa Ingresar. Los datos iniciales son ficticios.
+2. Filtra por Perros, abre la ficha y solicita un cuidado para Luna el 6 de noviembre de 2026 a las 11:00 a. m. La solicitud queda pendiente.
+3. Sal y entra como Proveedor. Abre Agenda y responde la solicitud. Confirmar ocupa el horario; rechazar requiere un motivo.
+4. Vuelve a entrar como Propietario y comprueba el estado en Mis solicitudes.
+5. Como Proveedor, publica un servicio y comprueba que aparezca en el catálogo de la especie seleccionada.
+
+ESCENARIOS
+- Roedores: inicialmente no hay resultados; cambiar especie permite volver al catálogo.
+- 6 de noviembre de 2026 a las 9:00 a. m.: horario de ejemplo ya confirmado; la solicitud debe avisar y conservar los demás datos.
+- Registro con maria@ejemplo.test: correo de ejemplo ya registrado.
+- Acceso con error@ejemplo.test: muestra un error de credenciales de ejemplo.
+- Publicación sin precio o sin especies: impide continuar.
+- En el pie de página, Acerca de esta demostración permite restablecer los datos ficticios.
+
+ARCHIVOS
+index.html: estructura y acceso a la maqueta.
+styles.css: estilos, colores, controles y adaptación móvil.
+app.js: navegación y simulación local de las interacciones.
+diseno.html: soporte de diseño editable.
+
+LÍMITES DEL PRELIMINAR
+No hay autenticación real, servidor, base de datos compartida, pagos ni reservas reales. El almacenamiento del navegador solo conserva datos de ejemplo; no guarda contraseñas. La comprobación de horarios simula el comportamiento y no demuestra concurrencia real. La revisión técnica realizada no sustituye pruebas de usabilidad con participantes, que siguen pendientes.
+
+Figma propio A2: https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS
+Contiene UI Kit y 23 pantallas/estados preliminares. El límite de herramientas de la cuenta gratuita interrumpió su revisión. Pendientes: alturas de texto, navegación consistente después de responder y correspondencia final con esta maqueta. No presentar el archivo de Figma como terminado.
+
+PRUEBAS CON PERSONAS
+El informe Word contiene el protocolo U01–U05. Aún no hay participantes confirmados. Registra la versión probada, fecha, dispositivo, rol, tarea, finalización con o sin ayuda, tiempo y observaciones. No rellenes resultados hasta realizar las sesiones.

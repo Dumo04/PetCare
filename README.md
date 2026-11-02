@@ -1,5 +1,18 @@
 # PetCare | Frontend
 
+## Preliminar de la Actividad 2 — 2 de noviembre de 2026
+
+La rama ya contiene una maqueta local editable: abre `index.html` junto con `styles.css` y `app.js`. `diseno.html` reúne el UI Kit, ocho wireframes, los recorridos y el Customer Journey; `LEEME.txt` describe las tareas y escenarios de revisión.
+
+Se comprobó técnicamente el filtro sin resultados, la solicitud con horario ocupado, el envío pendiente, la confirmación y el rechazo con motivo, la publicación con campos obligatorios y el registro duplicado. Se revisó la adaptación a 390 px y escritorio. Esta comprobación no es una prueba con participantes.
+
+Es una simulación con datos ficticios y almacenamiento local: no autentica usuarios ni hace reservas reales, no tiene servidor y no demuestra concurrencia. Las pruebas con propietarios y proveedores siguen pendientes.
+
+[Figma propio de A2](https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS): UI Kit y 23 pantallas/estados preliminares. Su revisión quedó interrumpida por el límite de herramientas de la cuenta gratuita; faltan alturas de texto y conexiones coherentes después de responder. La maquetación local permite seguir revisando, pero la equivalencia final con Figma aún no está aprobada.
+
+La documentación siguiente conserva el alcance previsto para el producto; no implica que el backend o el MVP funcional estén terminados.
+
+
 Aplicación web para conectar propietarios de mascotas con proveedores de servicios de cuidado. Este componente presenta el recorrido **encontrar, comparar y reservar**, con interfaces diferenciadas para propietarios y proveedores.
 
 **Componente:** Frontend · **Rama:** `frontend`
