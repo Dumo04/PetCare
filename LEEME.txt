@@ -2,16 +2,19 @@ PETCARE — ACTIVIDAD 2 — PRELIMINAR EDITABLE
 Revisión del 2 de noviembre de 2026
 
 ABRIR
-Extrae el ZIP completo y abre index.html en un navegador. Conserva juntos index.html, styles.css y app.js. No requiere instalaciones ni conexión. Para revisar el UI Kit, los ocho wireframes, los flujos y el Customer Journey abre diseno.html.
+Extrae el ZIP completo y abre index.html en un navegador. Conserva juntos index.html, styles.css y app.js. No requiere instalaciones ni conexión. Para revisar el UI Kit, los ocho wireframes, los flujos, el User Map y el Customer Journey abre diseno.html.
 
 RECORRIDO
 1. En el acceso selecciona Propietario y pulsa Ingresar. Los datos iniciales son ficticios.
-2. Filtra por Perros, abre la ficha y solicita un cuidado para Luna el 6 de noviembre de 2026 a las 11:00 a. m. La solicitud queda pendiente.
+2. Filtra por Perros, abre la ficha de Ana Rivera, elige Paseo acompañado y solicita un cuidado para Luna el 6 de noviembre de 2026 a las 11:00 a. m. La solicitud queda pendiente.
 3. Sal y entra como Proveedor. Abre Agenda y responde la solicitud. Confirmar ocupa el horario; rechazar requiere un motivo.
 4. Vuelve a entrar como Propietario y comprueba el estado en Mis solicitudes.
 5. Como Proveedor, publica un servicio y comprueba que aparezca en el catálogo de la especie seleccionada.
 
 ESCENARIOS
+- El catálogo agrupa por proveedor. Ana tiene dos servicios iniciales, Diego uno. En diseno.html, User Map incluye accesos de revisión a esas fichas y a Elena, que no tiene servicios ni botón de reserva.
+- Si conservas datos de la versión anterior, puedes restablecer los ejemplos desde el pie de la maqueta para recuperar los tres escenarios; el cambio no borra automáticamente tus datos ficticios.
+- La cuenta de proveedor simula a Ana; su agenda contiene solo solicitudes de sus servicios. No demuestra autorización real.
 - Roedores: inicialmente no hay resultados; cambiar especie permite volver al catálogo.
 - 6 de noviembre de 2026 a las 9:00 a. m.: horario de ejemplo ya confirmado; la solicitud debe avisar y conservar los demás datos.
 - Registro con maria@ejemplo.test: correo de ejemplo ya registrado.
