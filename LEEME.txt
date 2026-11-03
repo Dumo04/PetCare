@@ -26,7 +26,7 @@ ARCHIVOS
 index.html: estructura y acceso a la maqueta.
 styles.css: estilos, colores, controles y adaptación móvil.
 app.js: navegación y simulación local de las interacciones.
-diseno.html: soporte de diseño editable.
+diseno.html: soporte de diseño editable con continuidad de A1, ciclo de vida, interesados y User Map de interacción.
 
 LÍMITES DEL PRELIMINAR
 No hay autenticación real, servidor, base de datos compartida, pagos ni reservas reales. El almacenamiento del navegador solo conserva datos de ejemplo; no guarda contraseñas. La comprobación de horarios simula el comportamiento y no demuestra concurrencia real. La revisión técnica realizada no sustituye pruebas de usabilidad con participantes, que siguen pendientes.

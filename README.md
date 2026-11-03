@@ -4,13 +4,13 @@
 
 La rama ya contiene una maqueta local editable: abre `index.html` junto con `styles.css` y `app.js`. `diseno.html` reúne el UI Kit, ocho wireframes, los recorridos, el User Map y el Customer Journey; `LEEME.txt` describe las tareas y escenarios de revisión.
 
-Se comprobó técnicamente el filtro sin resultados, la solicitud con horario ocupado, el envío pendiente, la confirmación y el rechazo con motivo, la publicación con campos obligatorios y el registro duplicado. La primera versión del catálogo se revisó a 390 px y escritorio; la ficha ampliada requiere completar la matriz de dispositivos. Esta comprobación no es una prueba con participantes.
+Se comprobó técnicamente el filtro sin resultados, la solicitud con horario ocupado, el envío pendiente, la confirmación y el rechazo con motivo, la publicación con campos obligatorios y el registro duplicado. La primera versión del catálogo se revisó a 390 px y escritorio; la ficha ampliada y la solicitud se revisaron en ventanas de 390 y 768 px sin desbordamiento horizontal; la matriz completa de pantallas y navegadores sigue pendiente. Esta comprobación no es una prueba con participantes.
 
 Es una simulación con datos ficticios y almacenamiento local: no autentica usuarios ni hace reservas reales, no tiene servidor y no demuestra concurrencia. Las pruebas con propietarios y proveedores siguen pendientes.
 
 [Figma propio de A2](https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS): UI Kit y 23 pantallas/estados preliminares. Su revisión quedó interrumpida por el límite de herramientas de la cuenta gratuita; faltan alturas de texto y conexiones coherentes después de responder. La maquetación local permite seguir revisando, pero la equivalencia final con Figma aún no está aprobada.
 
-Actualización de continuidad A1: el catálogo agrupa por proveedor; cada ficha presenta su lista de servicios. Se verificaron fichas con varios servicios, uno y ninguno (sin botón de reserva), filtro por especie y agenda limitada al proveedor simulado. Los datos ficticios anteriores se conservan. El soporte de diseño incluye un User Map por rol y accesos de revisión separados del recorrido del producto. Los nuevos ejemplos iniciales se recuperan desde Restablecer datos de ejemplo; no se sustituyen automáticamente los datos locales existentes.
+Actualización de continuidad A1: el catálogo agrupa por proveedor; cada ficha presenta su lista de servicios. Se verificaron fichas con varios servicios, uno y ninguno (sin botón de reserva), filtro por especie y agenda limitada al proveedor simulado. Los datos ficticios anteriores se conservan. El soporte de diseño incluye la continuidad de evidencia de A1, siete fases del ciclo de vida, diez grupos de interesados y User Map de interacción entre propietario, plataforma y proveedor, además del mapa de pantallas y accesos de revisión separados del recorrido del producto. Los nuevos ejemplos iniciales se recuperan desde Restablecer datos de ejemplo; no se sustituyen automáticamente los datos locales existentes.
 
 La documentación siguiente conserva el alcance previsto para el producto; no implica que el backend o el MVP funcional estén terminados.
 
