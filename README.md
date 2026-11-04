@@ -1,16 +1,18 @@
 # PetCare | Frontend
 
-## Preliminar de la Actividad 2 — 2 de noviembre de 2026
+## Preliminar de la Actividad 2 — 4 de noviembre de 2026
 
-La rama ya contiene una maqueta local editable: abre `index.html` junto con `styles.css` y `app.js`. `diseno.html` reúne el UI Kit, ocho wireframes, los recorridos, el User Map y el Customer Journey; `LEEME.txt` describe las tareas y escenarios de revisión.
+La rama conserva cinco archivos que se abren sin instalaciones ni conexión. `index.html` presenta la maqueta de alta fidelidad; `diseno.html#baja-fidelidad` ofrece un prototipo gris navegable, independiente de los datos de la alta fidelidad. Extrae o descarga juntos `index.html`, `styles.css`, `app.js`, `diseno.html` y `LEEME.txt`. La fuente Inter está incrustada en la hoja de estilos y conserva su licencia SIL Open Font License 1.1.
 
-Se comprobó técnicamente el filtro sin resultados, la solicitud con horario ocupado, el envío pendiente, la confirmación y el rechazo con motivo, la publicación con campos obligatorios y el registro duplicado. La primera versión del catálogo se revisó a 390 px y escritorio; la ficha ampliada y la solicitud se revisaron en ventanas de 390 y 768 px sin desbordamiento horizontal; la matriz completa de pantallas y navegadores sigue pendiente. Esta comprobación no es una prueba con participantes.
+La baja fidelidad permite recorrer acceso y registro, catálogo por proveedor y especie, fichas con varios servicios, uno o ninguno, solicitud y errores, consulta de estados, publicación y agenda con confirmación o rechazo con motivo. Sus cambios permanecen en memoria; recargar o reiniciar la baja devuelve los ejemplos sin modificar el almacenamiento de la alta. Se conservan también los ocho wireframes de referencia, UI Kit, User Flow, User Map, Customer Journey y continuidad de A1.
 
-Es una simulación con datos ficticios y almacenamiento local: no autentica usuarios ni hace reservas reales, no tiene servidor y no demuestra concurrencia. Las pruebas con propietarios y proveedores siguen pendientes.
+Se verificaron técnicamente 17 comportamientos de la baja y 13 combinaciones de pantalla y ancho a 390/768 px, sin desbordamiento horizontal. Las comprobaciones previas de la alta incluyen filtros, disponibilidad simulada, envío pendiente, respuesta, publicación y registro, además de la matriz de 25 combinaciones documentada el 2 de noviembre. Estas revisiones técnicas no son sesiones con participantes ni acreditan rendimiento productivo.
 
-[Figma propio de A2](https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS): UI Kit y 23 pantallas/estados preliminares. Su revisión quedó interrumpida por el límite de herramientas de la cuenta gratuita; faltan alturas de texto y conexiones coherentes después de responder. La maquetación local permite seguir revisando, pero la equivalencia final con Figma aún no está aprobada.
+Es una simulación con datos ficticios. No autentica usuarios, no hace reservas reales y no demuestra servidor, base compartida ni concurrencia. Las pruebas con propietarios y proveedores siguen pendientes; el protocolo U01–U05 permanece preparado.
 
-Actualización de continuidad A1: el catálogo agrupa por proveedor; cada ficha presenta su lista de servicios. Se verificaron fichas con varios servicios, uno y ninguno (sin botón de reserva), filtro por especie y agenda limitada al proveedor simulado. Los datos ficticios anteriores se conservan. El soporte de diseño incluye la continuidad de evidencia de A1, siete fases del ciclo de vida, diez grupos de interesados y User Map de interacción entre propietario, plataforma y proveedor, además del mapa de pantallas y accesos de revisión separados del recorrido del producto. Los nuevos ejemplos iniciales se recuperan desde Restablecer datos de ejemplo; no se sustituyen automáticamente los datos locales existentes.
+[Figma propio de A2](https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS) conserva el UI Kit y el diseño visual editable. La revisión final de sus recorridos y su correspondencia con los prototipos HTML siguen en curso. No se declara cerrado ese requisito hasta terminar la comprobación.
+
+La continuidad de A1 conserva el catálogo agrupado por proveedor, lista de servicios por ficha, filtro por especie y agenda del proveedor simulado. Los datos ficticios anteriores de la alta se conservan; usa Restablecer datos de ejemplo para recuperar los escenarios iniciales. El soporte reúne evidencia de A1, siete fases del ciclo de vida, diez grupos de interesados, User Map de interacción y mapa de pantallas.
 
 La documentación siguiente conserva el alcance previsto para el producto; no implica que el backend o el MVP funcional estén terminados.
 
@@ -147,7 +149,7 @@ Casos de aceptación:
 - Agenda ordenada y agenda vacía.
 - Confirmación, rechazo con motivo y consulta del estado actualizado.
 
-La evaluación de usabilidad contempla sesiones con cinco participantes y registra el tiempo empleado, la finalización de la tarea y las dudas observadas durante la búsqueda de un proveedor y la solicitud de una cita.
+El plan histórico de A1 propone cinco participantes, sujeto a disponibilidad y procurando representar ambos roles. La guía de A2 no fija un mínimo. Las sesiones deberán registrar tiempo, finalización, dudas, dificultades y mejoras; todavía no hay resultados de participantes.
 
 ## Equipo y metodología
 
