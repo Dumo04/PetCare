@@ -10,7 +10,7 @@ Se verificaron técnicamente 17 comportamientos de la baja y 13 combinaciones de
 
 Es una simulación con datos ficticios. No autentica usuarios, no hace reservas reales y no demuestra servidor, base compartida ni concurrencia. Las pruebas con propietarios y proveedores siguen pendientes; el protocolo U01–U05 permanece preparado.
 
-[Figma propio de A2](https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS) conserva el UI Kit y el diseño visual editable. La revisión final de sus recorridos y su correspondencia con los prototipos HTML siguen en curso. No se declara cerrado ese requisito hasta terminar la comprobación.
+[Figma propio de A2](https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS) conserva el UI Kit y el diseño visual editable. Se revisaron técnicamente los recorridos de escritorio de ambos roles y su correspondencia con los prototipos HTML. Las variantes representan escenarios de ejemplo sin persistencia global. M03 es una referencia del catálogo móvil; las rutas de demostración continúan en escritorio. Las pruebas con participantes siguen pendientes.
 
 La continuidad de A1 conserva el catálogo agrupado por proveedor, lista de servicios por ficha, filtro por especie y agenda del proveedor simulado. Los datos ficticios anteriores de la alta se conservan; usa Restablecer datos de ejemplo para recuperar los escenarios iniciales. El soporte reúne evidencia de A1, siete fases del ciclo de vida, diez grupos de interesados, User Map de interacción y mapa de pantallas.
 

@@ -44,7 +44,7 @@ No hay autenticación real, servidor, base de datos compartida, pagos ni reserva
 La baja fidelidad muestra estructura y recorridos; la alta fidelidad agrega el acabado visual y estados de interacción. HTML permite recorrer las simulaciones sin conexión y Figma permite revisar y editar el diseño. Estas herramientas presentan prototipos académicos; no constituyen la implementación productiva del sistema.
 
 Figma propio A2: https://www.figma.com/design/7oScJKh6uqYcWWgXPkBcJS
-Archivo de trabajo para el diseño de A2. Su revisión final y correspondencia con los prototipos HTML siguen en curso; no presentarlo como terminado hasta cerrar esa comprobación.
+Diseño de A2 con UI Kit y recorridos de escritorio de ambos roles revisados técnicamente. Las variantes de Figma representan escenarios de ejemplo sin persistencia global. M03 es una referencia del catálogo móvil y sus rutas continúan en escritorio. Las pruebas con participantes siguen pendientes.
 
 PRUEBAS CON PERSONAS
 El informe Word contiene el protocolo U01–U05. Aún no hay participantes confirmados. Registra la versión probada, fecha, dispositivo, rol, tarea, finalización con o sin ayuda, tiempo y observaciones. No rellenes resultados hasta realizar las sesiones.
