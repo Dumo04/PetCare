@@ -17,8 +17,6 @@ La documentación comprende objetivos, alcance del MVP, requisitos funcionales y
 
 - Ariana Calderón Fuentes: Product Owner y equipo de desarrollo.
 - Santiago Duque Mora: Scrum Master y equipo de desarrollo.
-- Laura Valentina Ñustes Contento: equipo de desarrollo.
-- Heidy Viviana Cárdenas Soler: equipo de desarrollo.
 
 ## Seguimiento
 
