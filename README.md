@@ -164,8 +164,6 @@ La validación incluye pruebas por módulo y pruebas de integración del recorri
 | --- | --- |
 | Ariana Calderón Fuentes | Product Owner y equipo de desarrollo. |
 | Santiago Duque Mora | Scrum Master y equipo de desarrollo. |
-| Laura Valentina Ñustes Contento | Equipo de desarrollo. |
-| Heidy Viviana Cárdenas Soler | Equipo de desarrollo. |
 
 El equipo utiliza Scrum y gestiona el backlog, las prioridades y el seguimiento de las historias en Jira. Las historias comprenden el trabajo de interfaz y servidor necesario para completar cada funcionalidad. La planificación de iteraciones y las asignaciones se mantienen en el tablero del proyecto.
 
